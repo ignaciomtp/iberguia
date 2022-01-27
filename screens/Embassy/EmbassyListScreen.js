@@ -437,7 +437,8 @@ const EmbassyListScreen = (props) => {
 
 EmbassyListScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerTitle: '',
+        headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
                 navData.navigation.navigate('NewsList');
@@ -445,7 +446,7 @@ EmbassyListScreen.navigationOptions = (navData) => {
               <MaterialCommunityIcons name="arrow-left" size={30} color={COLORS.embassyColor} />
             </TouchableOpacity>
         ),
-        headerRight: (
+        headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navData.navigation.navigate('Splash');  
                 }

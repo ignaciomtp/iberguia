@@ -53,7 +53,8 @@ const PostDetails = props =>{
 PostDetails.navigationOptions = (navData) => {
   const from = navData.navigation.getParam('from');
   return{
-      headerLeft: (
+      headerTitle: '',
+      headerLeft: () => (
         <TouchableOpacity
           onPress={() => {
             if(from){
@@ -69,7 +70,7 @@ PostDetails.navigationOptions = (navData) => {
         </TouchableOpacity>
         
       ),
-      headerRight: (
+      headerRight: () => (
              <TouchableOpacity onPress={() =>{
                   navData.navigation.navigate('Splash');  
                 }

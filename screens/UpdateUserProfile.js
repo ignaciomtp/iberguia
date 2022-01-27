@@ -743,7 +743,7 @@ const UpdateUserProfile = (props) => {
 
 UpdateUserProfile.navigationOptions = navigationData => {
   return {
-      headerLeft: (
+      headerLeft: () => (
           <TouchableOpacity
             onPress={() => {
               navigationData.navigation.pop();
@@ -752,7 +752,7 @@ UpdateUserProfile.navigationOptions = navigationData => {
           </TouchableOpacity>
           
         ),
-        headerRight: (
+        headerRight: () => (
             <LogoHeader />
         ),
         title: getI18n().t('editar_perfil')

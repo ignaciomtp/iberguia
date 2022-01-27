@@ -69,7 +69,8 @@ const EmbassyMapScreen = props => {
 
 EmbassyMapScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerTitle: '',
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={COLORS.embassyColor}
             
@@ -80,7 +81,7 @@ EmbassyMapScreen.navigationOptions = (navData) => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navData.navigation.navigate('Splash');  
                 }

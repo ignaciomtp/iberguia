@@ -85,7 +85,7 @@ const HomeScreen = props => {
 }
 
 HomeScreen.navigationOptions = {
-  header: null,
+  headerShown: false,
 };
 
 

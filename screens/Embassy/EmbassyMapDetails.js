@@ -216,7 +216,7 @@ EmbassyMapDetails.navigationOptions = navigationData => {
     const title = navigationData.navigation.getParam('title');
     return {
         headerTitle: title,
-        headerLeft: (
+        headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
                 navigationData.navigation.pop();
@@ -225,7 +225,7 @@ EmbassyMapDetails.navigationOptions = navigationData => {
             </TouchableOpacity>
             
           ),
-          headerRight: (
+          headerRight: () => (
               <TouchableOpacity onPress={() =>{
                   navigationData.navigation.navigate('Splash');  
                 }

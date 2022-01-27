@@ -116,7 +116,8 @@ const EmbassySelectScreen = props => {
 
 EmbassySelectScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerTitle: '',
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={this.themeColor}
             
@@ -127,7 +128,7 @@ EmbassySelectScreen.navigationOptions = (navData) => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navData.navigation.navigate('Splash');  
                 }

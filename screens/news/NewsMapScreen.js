@@ -68,7 +68,7 @@ const NewsMapScreen = props => {
 
 NewsMapScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={COLORS.embassyColor}
             
@@ -79,7 +79,7 @@ NewsMapScreen.navigationOptions = (navData) => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navData.navigation.navigate('Splash');  
                 }

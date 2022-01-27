@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert } from 'react-native';
 import * as Location from 'expo-location';
-import * as Permissions from 'expo-permissions';
+
 import Geocoder from 'react-native-geocoding';
 //import Geolocation from 'react-native-geolocation-service';
 import KEY from './Key';
@@ -11,7 +11,7 @@ Geocoder.init(KEY.googleKey);
 
 export  const verifyPermissions = async () => {
     
-    const result = await Permissions.askAsync(Permissions.LOCATION);
+    const result = await Location.requestForegroundPermissionsAsync();
     
     if(result.status != 'granted'){
         return false;
@@ -39,7 +39,7 @@ export const getUserLocation = async () => {
     let userLocation;
 
      try{
-       console.log('TRYING...');
+/*       console.log('TRYING...');
        const location = await Location.getCurrentPositionAsync({timeout: 15000});
 
        console.log('SUCCESS....', location);
@@ -50,15 +50,15 @@ export const getUserLocation = async () => {
             latitudeDelta: 0.04,
             longitudeDelta: 0.05,
         };
-/*  
-RIBEIRA ***********
-        const userLocation = {
+  
+RIBEIRA ************/
+        userLocation = {
             latitude: 42.5612131,
             longitude: -8.9914677,
             latitudeDelta: 0.00922,
             longitudeDelta: 0.00421,
         };
-*/
+
 /* SUIZA  
         const userLocation = {
             latitude: 46.9845569,
@@ -81,13 +81,6 @@ RIBEIRA ***********
               );
       }
 
-        userLocation = {
-            latitude: 42.5612131,
-            longitude: -8.9914677,
-            latitudeDelta: 0.00922,
-            longitudeDelta: 0.00421,
-        };
-
     }
 
     return userLocation;
@@ -100,6 +93,7 @@ export const getUserRegion = async(lat, lon) => {
         .then(json => {
             let addressComponent = json.results[0].address_components;
             let ccaa = addressComponent.find(elem => elem.types[0] == 'administrative_area_level_2');
+            console.log('******* ', ccaa.long_name);
             return ccaa.long_name; 
                    
         })
@@ -174,7 +168,7 @@ export const showIcon = (idCategory) => {
         iconName = 'glass-cocktail';
         break;
       case '8':
-        iconName = 'worker';
+        iconName = 'shovel';
         break;
       case '9':
         iconName = 'theater';
@@ -189,7 +183,7 @@ export const showIcon = (idCategory) => {
         iconName = 'dog-side';
         break;
       case '19':
-        iconName = 'file-document-box-multiple';
+        iconName = 'file';
         break;
       case '20':
         iconName = 'dumbbell';

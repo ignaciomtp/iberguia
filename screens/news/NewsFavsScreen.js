@@ -95,7 +95,7 @@ class NewsFavsScreen extends Component {
 
 NewsFavsScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={this.themeColor}>
                 <Item title="Menu" iconName='ios-menu' onPress={() => {
@@ -104,7 +104,7 @@ NewsFavsScreen.navigationOptions = (navData) => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <LogoHeader />
         )
     };

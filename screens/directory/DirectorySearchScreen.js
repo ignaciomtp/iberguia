@@ -423,7 +423,8 @@ const DirectorySearchScreen = (props) => {
 
 DirectorySearchScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerTitle: '',
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={this.themeColor}>
                 <Item title="Menu" iconName='ios-menu' onPress={() => {
@@ -432,7 +433,7 @@ DirectorySearchScreen.navigationOptions = (navData) => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navData.navigation.navigate('Splash');  
                 }

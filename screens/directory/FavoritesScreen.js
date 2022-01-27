@@ -388,7 +388,8 @@ const FavoritesScreen = props => {
 
 FavoritesScreen.navigationOptions = navData => {
     return{
-        headerLeft: (
+        headerTitle: '',
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={themeColor}>
                 <Item title="Menu" iconName='ios-menu' onPress={() => {
@@ -397,7 +398,7 @@ FavoritesScreen.navigationOptions = navData => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navData.navigation.navigate('Splash');  
                 }

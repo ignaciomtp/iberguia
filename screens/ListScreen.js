@@ -45,7 +45,7 @@ const ListScreen = props => {
 
 ListScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={this.themeColor}
             

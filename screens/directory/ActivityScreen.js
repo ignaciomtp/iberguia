@@ -172,7 +172,7 @@ const ActivityScreen = props => {
         if(reg == 'La Coruña') reg = 'A Coruña';
 
         setUserRegion(reg);
-        // setRegion(reg);
+        //setRegion(reg);
     }
 
     const closeModal = () =>{
@@ -757,7 +757,7 @@ ActivityScreen.navigationOptions = navigationData => {
     const title = navigationData.navigation.getParam('title');
     return {
         headerTitle: title,
-        headerLeft: (
+        headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
                 navigationData.navigation.pop();
@@ -766,7 +766,7 @@ ActivityScreen.navigationOptions = navigationData => {
             </TouchableOpacity>
             
           ),
-          headerRight: (
+          headerRight: () => (
               
             <TouchableOpacity onPress={() =>{
                   navigationData.navigation.navigate('Splash');  

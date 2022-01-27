@@ -68,7 +68,8 @@ const DirectoryMapScreen = props => {
 
 DirectoryMapScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerTitle: '',
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={COLORS.embassyColor}
             
@@ -79,7 +80,7 @@ DirectoryMapScreen.navigationOptions = (navData) => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navData.navigation.navigate('Splash');  
                 }

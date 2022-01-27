@@ -101,7 +101,8 @@ class NewsSearchScreen extends Component {
 
 NewsSearchScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerTitle: '',
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={this.themeColor}>
                 <Item title="Menu" iconName='ios-menu' onPress={() => {
@@ -110,7 +111,7 @@ NewsSearchScreen.navigationOptions = (navData) => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <LogoHeader />
         )
     };

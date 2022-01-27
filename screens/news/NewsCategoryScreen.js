@@ -326,7 +326,7 @@ NewsCategoryScreen.navigationOptions = navigationData => {
     const title = navigationData.navigation.getParam('title');
     return {
         headerTitle: title,
-        headerLeft: (
+        headerLeft: () => (
            <TouchableOpacity
               onPress={() => {
                 navigationData.navigation.navigate('NewsList');
@@ -335,7 +335,7 @@ NewsCategoryScreen.navigationOptions = navigationData => {
             </TouchableOpacity>
             
           ),
-          headerRight: (
+          headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navigationData.navigation.navigate('Splash');  
                 }

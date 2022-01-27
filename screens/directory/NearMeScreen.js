@@ -375,8 +375,8 @@ const NearMeScreen = props => {
                 <View style={{width: '32%', padding: 5, alignItems: 'center'}}>
                     
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                        <Text style={{...styles.title, color: COLORS.directoryColor}}>{numVisibles} </Text>
-                        <Text style={{marginHorizontal: 0}}> {getI18n().t('Resultados')} </Text>
+                        <Text style={{...styles.title, color: COLORS.directoryColor, paddingLeft: 18}}>{numVisibles} </Text>
+                        <Text style={{marginHorizontal: 0, fontSize: 14,}}> {getI18n().t('Resultados')} </Text>
                     </View>
                         
                 </View>
@@ -420,11 +420,11 @@ const NearMeScreen = props => {
                     flexDirection: 'row',
                     
                 }}>
-                    <Text style={{...styles.title, color: COLORS.directoryColor}}>{numVisibles}</Text>
+                    <Text style={{...styles.title, color: COLORS.directoryColor, paddingLeft: 18}}>{numVisibles}</Text>
                     <Text style={{
                         alignItems: 'center', 
                         justifyContent: 'center',
-                        fontSize: 16,
+                        fontSize: 14,
                         marginHorizontal: 10
                     }}>{getI18n().t('Resultados')} </Text>
                     
@@ -685,8 +685,8 @@ const NearMeScreen = props => {
 
 NearMeScreen.navigationOptions = (navData) => {
     return{
-        title: 'Negocios Cercanos',
-        headerLeft: (
+        headerTitle: '',
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={COLORS.directoryColor}>
                 <Item title="Menu" iconName='ios-menu' onPress={() => {
@@ -696,7 +696,7 @@ NearMeScreen.navigationOptions = (navData) => {
             </HeaderButtons>
 
         ),
-        headerRight: (
+        headerRight: () => (
             <>
 
             <TouchableOpacity onPress={() =>{

@@ -586,7 +586,8 @@ BusinessScreen.navigationOptions = navigationData => {
   const from2 = navigationData.navigation.getParam('from');
   
   return {
-      headerLeft: (
+      headerTitle: '',
+      headerLeft: () => (
           <TouchableOpacity
             onPress={() => {
               if(from2 ){
@@ -608,11 +609,12 @@ BusinessScreen.navigationOptions = navigationData => {
           </TouchableOpacity>
           
         ),
-        headerRight: (
+        headerRight: () => (
           <TouchableOpacity onPress={() =>{
                   navigationData.navigation.navigate('Splash');  
                 }
             }>
+            
             <LogoHeader />
           </TouchableOpacity>
         )

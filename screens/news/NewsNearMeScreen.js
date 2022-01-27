@@ -68,7 +68,8 @@ const NearMeScreen = props => {
 
 NearMeScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerTitle: '',
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={COLORS.embassyColor}
             
@@ -79,7 +80,7 @@ NearMeScreen.navigationOptions = (navData) => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <LogoHeader />
         )
     };

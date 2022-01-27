@@ -172,7 +172,7 @@ const UserProfileScreen = (props) => {
 
 UserProfileScreen.navigationOptions = navigationData => {
   return {
-      headerLeft: (
+      headerLeft: () => (
           <TouchableOpacity
             onPress={() => {
                 navigationData.navigation.pop();
@@ -181,7 +181,7 @@ UserProfileScreen.navigationOptions = navigationData => {
           </TouchableOpacity>
           
         ),
-        headerRight: (
+        headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navigationData.navigation.navigate('Splash');  
                 }

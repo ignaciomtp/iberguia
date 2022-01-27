@@ -87,7 +87,7 @@ MapScreen.navigationOptions = (navigationData) => {
 
     return {
         title: getI18n().t('Mapa'),
-        headerLeft: (
+        headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
                 navigationData.navigation.pop();
@@ -96,7 +96,7 @@ MapScreen.navigationOptions = (navigationData) => {
             </TouchableOpacity>
             
           ),
-          headerRight: (
+          headerRight: () => (
               <LogoHeader />
           )
 

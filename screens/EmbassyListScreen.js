@@ -44,7 +44,7 @@ const EmbassyListScreen = props => {
 
 EmbassyListScreen.navigationOptions = (navData) => {
     return{
-        headerLeft: (
+        headerLeft: () => (
             <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={this.themeColor}
             
@@ -55,7 +55,7 @@ EmbassyListScreen.navigationOptions = (navData) => {
                 }} />
             </HeaderButtons>
         ),
-        headerRight: (
+        headerRight: () => (
             <LogoHeader />
         )
     };

@@ -322,7 +322,7 @@ NewsAllCategoriesScreen.navigationOptions = navigationData => {
     
     return {
         headerTitle: title,
-        headerLeft: (
+        headerLeft: () => (
              <HeaderButtons HeaderButtonComponent={HeaderButton} 
             color={themeColor}
             
@@ -334,7 +334,7 @@ NewsAllCategoriesScreen.navigationOptions = navigationData => {
             </HeaderButtons>
             
           ),
-          headerRight: (
+          headerRight: () => (
             <TouchableOpacity onPress={() =>{
                   navigationData.navigation.navigate('Splash');  
                 }
